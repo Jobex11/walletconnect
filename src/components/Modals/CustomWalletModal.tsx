@@ -2,7 +2,6 @@ import React from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { WalletIcon } from "@solana/wallet-adapter-react-ui";
 import { Icon } from "@iconify-icon/react";
-import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 import { isPWA } from "@/utils/is-pwa";
@@ -17,7 +16,6 @@ const CustomWalletModal: React.FC<CustomWalletModalProps> = ({
   onClose,
 }) => {
   const { wallets, select } = useWallet();
-  const { t } = useTranslation();
 
   return (
     <div

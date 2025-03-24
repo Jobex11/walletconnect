@@ -1,4 +1,3 @@
-import { useTranslation } from "react-i18next";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { Icon } from "@iconify-icon/react";
 
@@ -10,8 +9,6 @@ const Header = () => {
   const { setIsModalOpen } = useWalletProvider();
 
   const wallet = useWallet();
-
-  const { t } = useTranslation();
 
   const handleConnectWallet = () => {
     if (!wallet.connected && !wallet.connecting) {
@@ -36,7 +33,7 @@ const Header = () => {
         <p className="font-raleway lining-nums proportional-nums font-bold text-[15px] leading-5">
           {wallet.connected
             ? wallet?.publicKey?.toString()
-            : `${t("connectWallet")}`}
+            : "connect Wallet"}
         </p>
         <Icon
           icon={
